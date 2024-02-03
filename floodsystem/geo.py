@@ -13,7 +13,7 @@ def stations_by_distance(stations, p):
     for station in stations:
         distance=2*6370*np.arcsin(np.sqrt(np.sin((station.coordinate[0]-p[0])/2)**2+np.cos(station.coordinate[0])+np.cos(p[0])*np.sin(station.coordinate[1]-p[1])/2))
         statdist.append((station,distance))
-        statdist=utils.sorted_by_key(statdist,i=1)
+        statdist=sorted_by_key(statdist,i=1)
         return statdist
 
 #finding which stations are within radius r from a specific centre 
