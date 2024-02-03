@@ -5,7 +5,7 @@
 geographical data.
 
 """
-
+import numpy as np
 from utils import sorted_by_key  # noqa
 #task 1B
 def stations_by_distance(stations, p):
