@@ -12,7 +12,7 @@ from .utils import sorted_by_key  # noqa
 def stations_by_distance(stations, p):
     statdist=[]
     for station in stations:
-        distance= haversine(station.coord, p)
+        distance=haversine(station.coord, p)
         statdist.append((station,distance))
         statdist=sorted_by_key(statdist,i=1)
     return statdist
@@ -42,3 +42,18 @@ def stations_by_river(stations):
     for station in stations:
         station_river[station.river].append(station.name)
     return station_river
+
+def rivers_by_station_number(stations, N):
+    nstat=[]
+    output=[]
+    x=list(stations_by_river(stations).values())
+    y=list(stations_by_river(stations).keys())
+    for i in range(len(y)):
+        nstat.append((y[i],len(x[i])))
+    nstat=sorted_by_key(nstat,i=1,reverse=True)
+    for j in range(N):
+        output.append(nstat[j])
+    while nstat[N-1][1]==nstat[N][1]:
+        output.append(nstat[N])
+        N+=1
+    return output
