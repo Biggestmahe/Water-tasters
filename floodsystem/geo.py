@@ -53,7 +53,7 @@ def rivers_by_station_number(stations, N):
     nstat=sorted_by_key(nstat,i=1,reverse=True)
     for j in range(N):
         output.append(nstat[j])
-    while nstat[N-1][1]==nstat[N][1]:
+    while nstat[N-1][1]==nstat[N][1] and N<len(y)-1:
         output.append(nstat[N])
         N+=1
     return output
