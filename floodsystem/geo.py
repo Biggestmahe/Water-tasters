@@ -50,7 +50,7 @@ def stations_by_river(stations):
     for station in stations:
         station_river[station.river].append(station.name)
     return station_river
-
+#this function takes the dictionary from the function above and makes a list of the keys and values, from this it finds the corresponding length of the sublist of stations on each river and matches it to the corresponding river, then inserts them. After this theyre sorted by the index corresponding to the number of stations, if the next value is the same this is also added.
 def rivers_by_station_number(stations, N):
     nstat=[]
     output=[]
