@@ -54,5 +54,5 @@ def inconsistent_typical_range_stations(stations):
     faulty=[]
     for station in stations:
         if typical_range_consistent(station)==False:
-            faulty.append(station)
+            faulty.append(station.name)
     return faulty
