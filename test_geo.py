@@ -1,6 +1,6 @@
-import floodsystem.geo
 from floodsystem.stationdata import build_station_list
-import floodsystem.station
+from floodsystem import geo
+from floodsystem import station
 
 def test_station_by_distance():
     station1= station.MonitoringStation(0,0,"station 1",(0,0),(0,0),"river 1","town 1")
