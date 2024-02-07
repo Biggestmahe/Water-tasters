@@ -47,20 +47,18 @@ def test_stations_by_river():
 
 def test_rns():
     #create list of fake stations
-    station1= station.MonitoringStation(0,0,"station 1",(0,0),0,0,"river 1","town 1")
-    station2= station.MonitoringStation(0,0,"station 2",(10,0),0,0,"river 1","town 2")
-    station3= station.MonitoringStation(0,0,"station 3",(0,10),0,0,"river 2","town 3")
+    station1= station.MonitoringStation(0,0,"station 1",(0,0),(0,0),"river 1","town 1")
+    station2= station.MonitoringStation(0,0,"station 2",(10,0),(0,0),"river 1","town 2")
+    station3= station.MonitoringStation(0,0,"station 3",(0,10),(0,0),"river 2","town 3")
     stations=[station1,station2,station3]
     #manually computed result to compare to
-    comparison = [('River 1',2)]
+    comparison = [('river 1',2)]
     calculated = geo.rivers_by_station_number(stations,1)
-    if comparison==calculated:
-        print("rivers by number of stations currently functional")
-    else:
-        print("rivers by number of stations failed.")
+    assert comparison==calculated
 
 
 test_station_by_distance()
 test_stations_within_radius()
 test_rivers_with_station()
 test_stations_by_river()
+test_rns()
