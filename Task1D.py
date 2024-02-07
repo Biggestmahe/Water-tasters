@@ -21,9 +21,9 @@ def run():
     River_Aire= river2["River Aire"]
     River_Cam= river2["River Cam"]
     River_Thames= river2["River Thames"]
-    print("River Aire: "+ River_Aire)
-    print("River Cam"+ River_Cam)
-    print("River Thames"+ River_Thames)
+    print("River Aire: "+ str(River_Aire))
+    print("River Cam"+ str(River_Cam))
+    print("River Thames"+ str(River_Thames))
 
 
 if __name__ == "__main__":
