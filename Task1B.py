@@ -14,7 +14,7 @@ def run():
     # Build list of stations
     stations = build_station_list()
     closest=geo.stations_by_distance(stations,(52.2053, 0.1218))[:10]
-    furthest= geo.stations_by_distance(stations,(52.2053, 0.1218))[10:]
+    furthest= geo.stations_by_distance(stations,(52.2053, 0.1218))[-10:]
     furthest.reverse()
     output = []
     for i in closest:
