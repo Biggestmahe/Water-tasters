@@ -58,10 +58,11 @@ def inconsistent_typical_range_stations(stations):
     return faulty
 #Task 2B
 def relative_water_level(self):
-    if typical_range_consistent(self)==False:
+    if typical_range_consistent(self)==False or self.latest_level==None:
         return None
-    elif typical_range_consistent(self)==True:
+    else:
         a=self.typical_range[0]
         b=self.typical_range[1]
         rel=self.latest_level/(b-a)-a/(b-a)
+        print(rel)
         return rel

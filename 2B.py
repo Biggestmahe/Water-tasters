@@ -5,6 +5,6 @@ def run():
     tol=0.8
     print(stations_level_over_threshold(stations,tol))
 
-if __name__=="main":
+if __name__ == "__main__":
     print("*** Task 1D: CUED Part IA Flood Warning System ***")
     run()
