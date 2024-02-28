@@ -36,9 +36,7 @@ def test_range():
     #manually computed result to compare to
     comparison = ['station 2','station 3']
     calculated = inconsistent_typical_range_stations(stations)
-    if comparison==calculated:
-        print("inconsistent typical range stations currently functional")
-    else:
-        print("inconsistent typical range stations failed.")
+    assert comparison==calculated
+
     
 test_range()

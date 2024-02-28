@@ -10,7 +10,7 @@ def run():
     #display data from first N rivers
     print("First " + str(N) + " rivers by number of stations. (inclusive)")
 
-    print(rivers_by_station_number(stations, 3))
+    print(rivers_by_station_number(stations, N))
 
 if __name__ == "__main__":
     print("*** Task 1E: CUED Part IA Flood Warning System ***")
