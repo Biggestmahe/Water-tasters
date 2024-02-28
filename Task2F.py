@@ -10,7 +10,7 @@ def run():
     # Update latest level data for all stations
     update_water_levels(stations)
 
-    at_risk=stations_highest_rel_level(stations,5)
+    at_risk=stations_highest_rel_level(stations,2)
  
     for station in at_risk:
         plot_water_level_with_fit (station,  fetch_measure_levels(station.measure_id,datetime.timedelta(days=2))[0],  fetch_measure_levels(station.measure_id,datetime.timedelta(days=2))[1],4 )
