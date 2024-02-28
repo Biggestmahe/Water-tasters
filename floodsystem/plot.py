@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 from datetime import datetime, timedelta
+import numpy as np
 def plot_water_levels(station, dates, levels):
     plt.plot(dates,levels)
     plt.xlabel("time")
