@@ -2,6 +2,8 @@ import matplotlib.pyplot as plt
 from datetime import datetime, timedelta
 import numpy as np
 from .analysis import polyfit
+import matplotlib
+
 def plot_water_levels(station, dates, levels):
     plt.plot(dates,levels)
     lower,upper=[],[]
@@ -20,6 +22,13 @@ def plot_water_levels(station, dates, levels):
 def plot_water_level_with_fit(station, dates, levels, p):
     poly, d0 = polyfit(dates, levels, p)
     plt.plot(dates, levels, '.')
-    x1 = np.linspace(dates[0], dates[-1], 30)
-    plt.plot(x1, poly(x1 - dates[0]))    
+    x1 = np.linspace( matplotlib.dates.date2num(dates)[0], matplotlib.dates.date2num(dates)[-1], 30)
+    plt.plot(x1, poly(x1 - matplotlib.dates.date2num(dates)[0]))  
+    lower,upper=[],[]
+    for i in range(len(dates)):
+        lower.append(station.typical_range[0])
+        upper.append(station.typical_range[1])
+    plt.plot(dates,upper)
+    plt.plot(dates,lower)
+    plt.title(station.name)  
     plt.show()
