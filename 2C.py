@@ -8,10 +8,8 @@ def run():
     stations = build_station_list()
     update_water_levels(stations)
     l= stations_highest_rel_level(10)
-    final=[]
     for i in l:
-        final.append(i.name)
-    print(final)
+        print(str(i.name )+ str(i.relative_water_level()) )
 if __name__ == "__main__":
     print("*** Task 1D: CUED Part IA Flood Warning System ***")
     run()
