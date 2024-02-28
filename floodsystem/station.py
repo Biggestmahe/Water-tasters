@@ -64,5 +64,4 @@ def relative_water_level(self):
         a=self.typical_range[0]
         b=self.typical_range[1]
         rel=self.latest_level/(b-a)-a/(b-a)
-        print(rel)
         return rel
