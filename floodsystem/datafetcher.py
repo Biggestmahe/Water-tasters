@@ -143,4 +143,4 @@ def fetch_measure_levels(measure_id, dt):
         dates.append(d)
         levels.append(measure['value'])
 
-    return dates, levels
+    return [dates, levels]
