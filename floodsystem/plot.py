@@ -5,7 +5,6 @@ def plot_water_levels(station, dates, levels):
     plt.xlabel("time")
     plt.ylabel("Water Level (m)")
     plt.title(station.name)
-    plt.tight_layout()  
 
     plt.show()
 
