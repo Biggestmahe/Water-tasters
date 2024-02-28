@@ -11,9 +11,8 @@ def run():
     update_water_levels(stations)
 
     at_risk=stations_highest_rel_level(stations,5)
- 
     for station in at_risk:
-        plot_water_levels(station,fetch_measure_levels(station.station_id,datetime.timedelta(days=10))[0],fetch_measure_levels(station.station_id,datetime.timedelta(days=10))[1])
+        plot_water_levels(station,fetch_measure_levels(station.measure_id,datetime.timedelta(days=10))[0],fetch_measure_levels(station.measure_id,datetime.timedelta(days=10))[1])
 
 if __name__ == "__main__":
     print("*** Task 2A: CUED Part IA Flood Warning System ***")
