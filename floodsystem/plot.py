@@ -4,6 +4,12 @@ import numpy as np
 from .analysis import polyfit
 def plot_water_levels(station, dates, levels):
     plt.plot(dates,levels)
+    lower,upper=[],[]
+    for i in range(len(dates)):
+        lower.append(station.typical_range[0])
+        upper.append(station.typical_range[1])
+    plt.plot(dates,upper)
+    plt.plot(dates,lower)
     plt.xlabel("time")
     plt.ylabel("Water Level (m)")
     plt.xticks(rotation=45);
