@@ -16,11 +16,11 @@ high = set()
 moderate = set()
 low = set()
 for station in stationsover:
-    (dates, levels) = fetch_measure_levels(station[0].measure_id, dt=datetime.timedelta(days=1))
+    (dates, levels) = fetch_measure_levels(station[0].measure_id, dt=datetime.timedelta(days=2))
     if dates == [] or levels == []:
         pass
     else:
-        poly, d0 = polyfit(dates, levels, 1)
+        poly, d0 = polyfit(dates, levels, 4)
         derivative = np.polyder(poly, 1)
         value = derivative(plt.dates.date2num(dates[-1]) - d0)
         if station[0].town == None or value > 0 :
