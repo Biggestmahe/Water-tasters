@@ -1,7 +1,7 @@
 import numpy as np
-import matplotlib
+import matplotlib.dates as mdates
 def polyfit(dates, levels, p):
-    dates= matplotlib.dates.date2num(dates)
+    dates= mdates.date2num(dates)
     a = dates[0]
     for i in range(len(dates)):
         dates[i] -= a
