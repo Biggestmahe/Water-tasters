@@ -1,5 +1,4 @@
 import matplotlib.pyplot as plt
-from datetime import datetime, timedelta
 import numpy as np
 from .analysis import polyfit
 import matplotlib.dates as mdates
